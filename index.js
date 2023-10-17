@@ -26,17 +26,12 @@ class MyCustomElement extends HTMLElement {
     }
 }
 
-customElements.define("my-albz", MyCustomElement);
+customElements.define("my-custom-element", MyCustomElement);
 
 setTimeout(() => {
-    // Get the my-albz element
-    const element = document.querySelector("my-albz");
-
+    const element = document.querySelector("my-custom-element");
     // Update the dataElement attribute
     let jsonElement = JSON.stringify({ key1: "value5", key2: "value6", key3: "value7", key4: "value8" });
     element.setAttribute("data-element", jsonElement);
-
-    // Trigger change detection
-    element.dispatchEvent(new Event("change"));
 
 }, 2000);
